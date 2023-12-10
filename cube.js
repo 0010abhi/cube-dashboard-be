@@ -1,13 +1,11 @@
 module.exports = {
     // Base path for the REST API
     basePath: '/cube-api',
-    http: {
-        cors: {
-            origin: "https://0010abhi.github.io",
-        },
-    },
-
-    // Inspect, modify, or restrict every query
+    // http: {
+    //     cors: {
+    //         origin: "https://0010abhi.github.io",
+    //     },
+    // },
     queryRewrite: (query, { securityContext }) => {
         if (securityContext.order_id) {
             query.filters.push({
